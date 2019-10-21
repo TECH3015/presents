@@ -15,12 +15,13 @@ const rgx = /([a-zA-Z\-0-9\/]+)/g;
 const match = queryString.match(rgx);
 // console.log(match);
 
+const slides = document.querySelector(".slides");
+
 if(match) {
 
   const url = `https://raw.githubusercontent.com/${match[0]}/${match[1]}/master/${match[2]}.md`;
   // console.log(url);
 
-  const slides = document.querySelector(".slides");
   slides.innerHTML = `
   <section data-markdown="${url}"
           data-separator-vertical="^\n\n"
@@ -32,3 +33,28 @@ if(match) {
   const title = document.querySelector("title");
   title.innerHTML = `${match[1]} ${match[2]}`;
 }
+
+
+
+
+// LOCAL FILE TESTING
+
+const fileForm = document.querySelector("#localFile");
+const fileInput = document.querySelector("#myFile");
+
+
+
+fileForm.addEventListener("submit", () => {
+
+  console.log(fileInput);
+  console.log(fileInput.files);
+
+  slides.innerHTML = `
+  <section data-markdown="${fileInput.files.name}"
+          data-separator-vertical="^\n\n"
+          data-separator-notes="^Note:"
+          data-charset="utf-8">
+  </section>
+  `;
+
+});

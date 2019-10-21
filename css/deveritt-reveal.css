@@ -83,6 +83,14 @@ button,
   background: linear-gradient(45deg, #00637c 0%, #002b36 60%);
 }
 
+form label {
+  margin-right: 1em;
+}
+input[type="file"],
+input[type="submit"] {
+  font-size: 1em;
+}
+
 @media print {
   a[href]:after {
     content: " (" attr(href) ")";
