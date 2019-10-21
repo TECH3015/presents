@@ -13,23 +13,40 @@
 
     <link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
+    <!-- <link rel="stylesheet" href="plugin/editor/style.css"> -->
     <link rel="stylesheet" href="css/theme/moon.css">
-    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="lib/css/dracula.css">
     <link rel="stylesheet" href="css/deveritt-reveal.css">
 
     <!-- Printing and PDF exports -->
 		<script>
-			var link = document.createElement( 'link' );
+			let link = document.createElement('link');
 			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
+			link.href = location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.querySelector('head').appendChild(link);
+      // syntax highlighting
+      if(location.search.match(/print-pdf/gi)) {
+        let link2 = document.createElement('link');
+        link2.rel = 'stylesheet';
+        link2.href = 'lib/css/github.css';
+        document.querySelector('head').appendChild(link2);
+      }
 		</script>
+
+    <!-- <script src="plugin/editor/src-noconflict/ace.js"></script>  -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
+    <!-- <script src="plugin/editor/revealeditor.js"></script> -->
+
 	</head>
 	<body>
+    
+    <!-- <button class="btn">Open Editor</button> -->
+
 		<div class="reveal">
+
 			<div class="slides">
         <!-- external slides will be added here by javascript via url params -->
+
         <section>				
           <h2>Fania presents</h2>
           <p><code>fania.github.io/presents</code> + <br> 
@@ -102,10 +119,12 @@
           </form>
         </section>
 			</div>
+
 		</div>
 
 		<script src="js/reveal.js"></script>
     <script src="js/script.js"></script>
+    
 
 		<script>
 			// More info about config & dependencies:
@@ -135,5 +154,6 @@
         ]
 			});
 		</script>
+    <!-- <script>$(".btn").RevealEditor();</script> -->
 	</body>
 </html>

@@ -24,9 +24,9 @@ if(match) {
 
   slides.innerHTML = `
   <section data-markdown="${url}"
-          data-separator-vertical="^\n\n"
-          data-separator-notes="^Note:"
-          data-charset="utf-8">
+           data-separator-vertical="^\n\n"
+           data-separator-notes="^Note:"
+           data-charset="utf-8">
   </section>
   `;
 
@@ -58,3 +58,17 @@ fileForm.addEventListener("submit", () => {
   `;
 
 });
+
+
+
+
+
+// for testing
+// const slides = document.querySelector(".slides");
+// slides.innerHTML = `
+// <section data-markdown="demo.md"
+//          data-separator-vertical="^\n\n"
+//          data-separator-notes="^Note:"
+//          data-charset="utf-8">
+// </section>
+// `;
