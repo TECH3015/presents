@@ -11,9 +11,20 @@ const match = queryString.match(rgx);
 // console.log(match);
 
 if (match === null) {
+  // for testing
+  const slides = document.querySelector(".slides");
+  slides.innerHTML = `
+  <section data-markdown="test.md"
+    data-separator="^==="
+    data-separator-vertical="^---"
+    data-separator-notes="^Note:"
+    data-charset="utf-8">
+  </section>
+  `;
+  // end testing
   delayed_init();  // run default presentation from index.html
 } else {
-  const url = `https://raw.githubusercontent.com/${match[0]}/${match[1]}/master/${match[2]}.md`;
+  const url = `https://raw.githubusercontent.com/TECH3015/lectures/master/${match[0]}.md`;
 
   fetch(url)
     .then(function(response) {
@@ -29,17 +40,18 @@ if (match === null) {
 }
 
 function loadSingle() {
-  const url = `https://raw.githubusercontent.com/${match[0]}/${match[1]}/master/${match[2]}.md`;
+  const url = `https://raw.githubusercontent.com/TECH3015/lectures/master/${match[0]}.md`;
   const slides = document.querySelector(".slides");
   slides.innerHTML = `
     <section data-markdown="${url}"
-            data-separator-vertical="^\n\n"
+            data-separator="^==="
+            data-separator-vertical="^---"
             data-separator-notes="^Note:"
             data-charset="utf-8">
     </section>
   `;
   const title = document.querySelector("title");
-  title.innerHTML = `${match[1]} ${match[2]}`;
+  title.innerHTML = `${match[0]} TECH3015`;
 }
 
 
@@ -50,13 +62,25 @@ function loadMultiple(text) {
   lines.forEach(line => {
     let cleanedLine = line.trim();
     let details = cleanedLine.split(" ");
-    const url = `https://raw.githubusercontent.com/${details[0]}/${details[1]}/master/${details[2]}.md`;
+    const url = `https://raw.githubusercontent.com/TECH3015/lectures/master/${details[0]}.md`;
     slides.innerHTML += `
       <section data-markdown="${url}"
-              data-separator-vertical="^\n\n"
+              data-separator="^==="
+              data-separator-vertical="^---"
               data-separator-notes="^Note:"
               data-charset="utf-8">
       </section>
     `;
   });
+  const title = document.querySelector("title");
+  title.innerHTML = `TECH3015`;
 }
+
+
+// function handleImagePaths() {
+//   const images = document.querySelectorAll(".slides img");
+//   images.forEach(image => {
+//     const name = image.attributes.src.value;
+//     image.src = `https://raw.githubusercontent.com/front-end-materials/images/master/${name}`;
+//   });
+// }
