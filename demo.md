@@ -2,12 +2,12 @@
 
 A presentation by [Fania](https://fania.eu).
 
----
+===
 
 ## Images **absolute**
 ![alt](https://raw.githubusercontent.com/Fania/presents/master/imgs/technokitten.jpg)
 
----
+===
 
 ## Code
 
@@ -54,13 +54,13 @@ function Example() {
   (<a href='https://codepen.io/faniae'>@faniae</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
----
+===
 
 ## Live Code Editor
 
 <button class="btn"> Open </button>
 
----
+===
 
 <!-- .slide: data-background-image="https://raw.githubusercontent.com/Fania/presents/master/imgs/magicsquares.png" data-background-size="contain" -->
 ## Background Image 
@@ -81,7 +81,7 @@ function Example() {
 <!-- .slide: data-background-iframe="https://daveeveritt.github.io/space-weather-words/" -->
 ## Background Iframe
 
----
+===
 
 ## Goodbye
 
