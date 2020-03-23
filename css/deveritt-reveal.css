@@ -50,8 +50,9 @@ button,
 .midcode pre code { font-size: 1.05em; }
 .smalltext,
 .reveal .smalltext p,
-.reveal .smalltext ul,
+.reveal .smalltext ul li,
 .reveal .smalltext table { font-size: .8em; }
+.reveal .smalltext ul li p { font-size: 1em; }
 .reveal .smallhead h1 { font-size: 3em; margin: 0; }
 .reveal .small-subheads h2 { font-size: 1.25em; margin: 0; }
 .reveal .small-subheads ul { padding-top: 0; }
