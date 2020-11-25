@@ -46,6 +46,7 @@ button,
 .crammed ul,
 .crammed ol,
 .crammed p,
+.crammed table,
 .smallcode pre code { font-size: .9em; }
 .midcode pre code { font-size: 1.05em; }
 .smalltext,

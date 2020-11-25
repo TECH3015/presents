@@ -5,6 +5,7 @@ A presentation by [Fania](https://fania.eu).
 ===
 
 ## Images **absolute**
+
 ![alt](https://raw.githubusercontent.com/Fania/presents/master/imgs/technokitten.jpg)
 
 ===
